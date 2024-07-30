@@ -18,7 +18,11 @@
         public string? Avatar { get => _avatar; set => _avatar = value; }
 
          public Contact() {
-            
+            Id = 1;
+            Nom = "Doe";
+            Prenom = "John";
+            Date_naissance = new DateTime(2000, 1, 1);
+            Genre = "M";
         } 
         #endregion
     }

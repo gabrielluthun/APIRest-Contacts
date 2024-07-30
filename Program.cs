@@ -1,6 +1,5 @@
-using APIContacts;
+
 using APIContacts.Data;
-using Microsoft.Build.Construction;
 using Microsoft.EntityFrameworkCore;
 using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 var builder = WebApplication.CreateBuilder(args);

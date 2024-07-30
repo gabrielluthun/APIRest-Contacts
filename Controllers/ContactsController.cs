@@ -20,11 +20,26 @@ namespace APIContacts.Controllers
         }
 
         [HttpGet]
-        
+
         public async Task<ActionResult<List<Contact>>> GetAllContacts()
         {
-          // Récupérer tous les contacts
+            // Récupérer tous les contacts
             var contacts = await _context.Contacts.ToListAsync();
+
+            // Retourner les contacts
+            return Ok(contacts);
+        }
+
+        [HttpGet ("{id}")]
+        
+        public async Task<ActionResult<List<Contact>>> GetContacts(int id)
+        {
+          // Récupérer tous les contacts
+            var contacts = await _context.Contacts.FindAsync(id);
+            if(contacts is null)
+            {
+                return NotFound("Contact not found");
+            }
 
             // Retourner les contacts
             return Ok(contacts);
